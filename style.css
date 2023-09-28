@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+}
+section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+ul {
+  display: contents;
+}
+
+li {
+  aspect-ratio: 1;
+  background: hsl(var(--hsl) / 20%);
+  color: hsl(var(--hsl));
+  border: 1px dashed;
+  display: grid;
+  place-content: center;
+}
+
+@layer defaults {
+  main {
+    display: grid;
+    grid: auto / 1fr minmax(0, 800px) 1fr;
+    gap: 1rem;
+
+    > * {
+      grid-column: 2;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    line-height: 1.125;
+  }
+
+  html {
+    font-family: system-ui;
+  }
+
+  body {
+    margin: 0;
+  }
+}
